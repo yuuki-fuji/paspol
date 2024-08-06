@@ -50,6 +50,7 @@ npx prettier --version
 - 今回は header,footer を template-parts に入れたので、get_template_part()を使用
 - テーマのルートディレクトリに置くなら、get_header(); などで OK
 
+```
 .
 ├── README.md
 ├── assets
@@ -64,6 +65,7 @@ npx prettier --version
 └── template-parts
 ├── footer.php
 └── header.php
+```
 
 ## WP 管理画面
 
