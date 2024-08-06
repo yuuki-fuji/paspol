@@ -1,9 +1,7 @@
 # Pas-Pol 
 
-
 ## Reference site
 https://pas-pol.jp/
-
 
 ## Theme
 * style.cssとindex.phpが必須
@@ -11,7 +9,7 @@ https://pas-pol.jp/
 * サムネイルは、screenshot.pngで保存する
 
 ## テーマ構成
-* 今回はheader,footerをtemplate-partsに入れたので、get_template_part()を使用。
+* 今回はheader,footerをtemplate-partsに入れたので、get_template_part()を使用
 * テーマのルートディレクトリに置くなら、get_header(); などでOK
 
 .
@@ -28,7 +26,6 @@ https://pas-pol.jp/
 └── template-parts
     ├── footer.php
     └── header.php
-
 
 ## WP管理画面
 * 日本語、日本時間に変更
