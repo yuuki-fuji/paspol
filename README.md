@@ -3,6 +3,27 @@
 ## Reference site
 https://pas-pol.jp/
 
+## Tools
+### Gulp, BrowserSync
+```
+# Gulp CLIが未インストールの場合
+npm install --global gulp-cli
+# nodeが見つからないとき、sudo で npm コマンドを実行する際に、環境変数を設定
+sudo env "PATH=$PATH" /home/yuuki/.nvm/versions/node/v20.16.0/bin/npm install --save-dev gulp
+# setup
+npm install gulp browser-sync gulp-sass --save-dev
+
+# 確認
+npx gulp --version
+  >CLI version: 3.0.0
+  >Local version: 5.0.0
+
+# Gulpを実行
+npx gulp
+
+```
+
+
 ## Theme
 * style.cssとindex.phpが必須
 * WordPressテーマの画像サイズは、幅1200px／高さ900pxまたは幅880px／高さ660px
