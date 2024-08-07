@@ -2,3 +2,5 @@ node_modules
 vendor
 *.min.js
 *.min.css
+jquery-3.7.1.min.js
+**/jquery-3.7.1.min.js
