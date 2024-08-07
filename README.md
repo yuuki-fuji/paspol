@@ -11,8 +11,10 @@ https://pas-pol.jp/
 ```
 # Gulp CLIが未インストールの場合
 npm install --global gulp-cli
+
 # nodeが見つからないとき、sudo で npm コマンドを実行する際に、環境変数を設定
 sudo env "PATH=$PATH" /home/yuuki/.nvm/versions/node/v20.16.0/bin/npm install --save-dev gulp
+
 # setup
 npm install gulp browser-sync gulp-sass --save-dev
 
@@ -35,9 +37,8 @@ npm install --save-dev prettier @prettier/plugin-php
 # インストールの確認
 npx prettier --version
 ```
+
 プロジェクトのルートディレクトリに .prettierrc ファイルを作成
-
-
 
 ## Theme
 
