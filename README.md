@@ -78,4 +78,5 @@ npx prettier --version
 - HTTP Auth：　 Basic 認証
 - Advanced Custom Fields：　カスタムフィールド
 - Contact Form 7：　問合わせフォーム
--
+- Copy & Delete Posts：　投稿やページの複製
+- EWWW Image Optimizer：　画像最適化
