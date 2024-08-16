@@ -5,22 +5,22 @@
 function theme_enqueue_assets()
 {
     // jQueryを読み込む
-  // wp_enqueue_script('jquery');
+  wp_enqueue_script('jquery');
 
   // デフォルトのjQueryを解除
-  wp_deregister_script('jquery');
+  // wp_deregister_script('jquery');
 
-  // ダウンロードしたjQueryを登録
-  wp_register_script(
-      'download-jquery', // 新しいハンドル名
-      get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js', // jQueryのパス
-      array(), // 依存関係（必要に応じて追加）
-      '3.7.1', // バージョン
-      true // フッターで読み込む
-  );
+  // // ダウンロードしたjQueryを登録
+  // wp_register_script(
+  //     'download-jquery', // 新しいハンドル名
+  //     get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js', // jQueryのパス
+  //     array(), // 依存関係（必要に応じて追加）
+  //     '3.7.1', // バージョン
+  //     true // フッターで読み込む
+  // );
 
-  // ダウンロードしたjQueryをキューに追加
-  wp_enqueue_script('download-jquery');
+  // // ダウンロードしたjQueryをキューに追加
+  // wp_enqueue_script('download-jquery');
 
   // slickのスタイルシートを読み込む
   wp_enqueue_style(
