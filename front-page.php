@@ -1,9 +1,29 @@
 <?php
   get_template_part('template-parts/header'); // header.php をインクルード
 ?>
-idnex
 
-<section>
+<!-- メインビジュアル -->
+<div class="main-visual--slide">
+    <?php
+      // 画像パスのリスト
+      $images = array(
+          get_template_directory_uri() . '/assets/images/main_visual_111-0x0.jpg',
+          get_template_directory_uri() . '/assets/images/main_visual_13-0x0.jpg',
+          get_template_directory_uri() . '/assets/images/main_visual_2-0x0.jpg',
+          get_template_directory_uri() . '/assets/images/main_visual_6-0x0.jpg',
+          get_template_directory_uri() . '/assets/images/main_visual_7-0x0.jpg'
+      );
+
+      // 画像をループして表示
+      foreach ($images as $image) :
+    ?>
+        <div>
+            <img src="<?php echo esc_url($image); ?>" alt="Main Visual">
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<section class="l-section">
   <h2>PRODUCT</h2>
   <a href="<?php echo get_post_type_archive_link('product'); ?>">More Products</a>
   <?php

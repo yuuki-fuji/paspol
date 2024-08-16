@@ -7,4 +7,4 @@
     <?php wp_head(); ?>
   </head>
   <body>
-  <p>Header</p>
+  <!-- <p>Header</p> -->

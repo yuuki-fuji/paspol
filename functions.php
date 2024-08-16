@@ -22,8 +22,38 @@ function theme_enqueue_assets()
   // ダウンロードしたjQueryをキューに追加
   wp_enqueue_script('download-jquery');
 
-  // JavaScriptファイルを読み込む
+  // slickのスタイルシートを読み込む
+  wp_enqueue_style(
+    'slick-css', // ハンドル名
+    get_template_directory_uri() . '/assets/js/slick-1.8.1/slick/slick.css', // slick.cssのパス
+    array(), // 依存関係なし
+    '1.8.1' // バージョン
+  );
 
+  wp_enqueue_style(
+      'slick-theme-css', // ハンドル名
+      get_template_directory_uri() . '/assets/js/slick-1.8.1/slick/slick-theme.css', // slick-theme.cssのパス
+      array('slick-css'), // slick.cssに依存
+      '1.8.1' // バージョン
+  );
+
+  // slickのJavaScriptファイルを読み込む
+  wp_enqueue_script(
+      'slick-js', // ハンドル名
+      get_template_directory_uri() . '/assets/js/slick-1.8.1/slick/slick.min.js', // slick.min.jsのパス
+      array('download-jquery'), // jQueryに依存
+      '1.8.1', // バージョン
+      true // フッターで読み込む
+  );
+
+  // JavaScriptファイルを読み込む
+  wp_enqueue_script(
+    'custom-index-js', // ハンドル名
+    get_template_directory_uri() . '/assets/js/index.js', // index.jsのパス
+    array('slick-js'), // slickに依存
+    '1.0.0', // バージョン
+    true // フッターで読み込む
+  );
 
   // リセットCSSを読み込む
   wp_enqueue_style('destyle', get_template_directory_uri() . '/assets/css/destyle.min.css');
