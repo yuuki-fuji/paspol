@@ -64,10 +64,19 @@ function theme_enqueue_assets()
 add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
 
 /**
- * カスタム投稿タイプ product を登録
- *
+ * テーマのセットアップを行う関数。
+ * - アイキャッチ画像（サムネイル画像）のサポートを有効にする
+ * - タイトルタグを動的に出力する
+ * - カスタム投稿タイプ 'product' を登録
  */
-function create_product_post_type() {
+function theme_setup() {
+  // アイキャッチ画像のサポートを有効にする
+  add_theme_support('post-thumbnails');
+
+  // タイトルタグを動的に出力する
+  add_theme_support('title-tag');
+
+  // カスタム投稿タイプ 'product' を登録
   register_post_type('product',
     array(
       // 投稿タイプのラベルを設定
@@ -84,22 +93,9 @@ function create_product_post_type() {
         'editor', // 投稿のコンテンツエディタ
         'thumbnail', // 投稿のアイキャッチ画像
         'excerpt' // 投稿の抜粋フィールド
-    )
+      )
     )
   );
-}
-add_action('init', 'create_product_post_type');
-
-/**
- * テーマのセットアップを行う関数。
- * - アイキャッチ画像（サムネイル画像）のサポートを有効にする
- * - タイトルタグを動的に出力する
- */
-function theme_setup() {
-  // アイキャッチ画像のサポートを有効にする
-  add_theme_support('post-thumbnails');
-  // タイトルタグを動的に出力する
-  add_theme_support('title-tag');
 }
 
 // テーマのセットアップが完了した後に 'theme_setup' 関数を実行
