@@ -91,12 +91,16 @@ function create_product_post_type() {
 add_action('init', 'create_product_post_type');
 
 /**
- * テーマでアイキャッチ画像のサポートを有効にする。
+ * テーマのセットアップを行う関数。
+ * - アイキャッチ画像（サムネイル画像）のサポートを有効にする
+ * - タイトルタグを動的に出力する
  */
 function theme_setup() {
   // アイキャッチ画像のサポートを有効にする
   add_theme_support('post-thumbnails');
+  // タイトルタグを動的に出力する
+  add_theme_support('title-tag');
 }
 
-// 'after_setup_theme'アクションにフックして関数を実行
+// テーマのセットアップが完了した後に 'theme_setup' 関数を実行
 add_action('after_setup_theme', 'theme_setup');
