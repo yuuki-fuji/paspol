@@ -10,4 +10,16 @@ jQuery(document).ready(function ($) {
     fade: true, // フェードイン・アウトを無効に
     cssEase: 'linear', // アニメーションの種類
   });
+
+  // ハンバーガーメニューの開閉
+  $('.js-openbtn').click(function () {
+    // ボタンがクリックされたら
+    console.log('クリックされました');
+    $('.js-navigation').toggleClass('is-open'); // ボタン自身に activeクラスを付与し
+  });
+
+  $('#g-nav a').click(function () {
+    // ナビゲーションのリンクがクリックされたら
+    $('.js-navigation').removeClass('is-open'); // ボタンの activeクラスを除去し
+  });
 });
