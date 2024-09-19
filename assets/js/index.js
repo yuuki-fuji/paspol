@@ -17,9 +17,4 @@ jQuery(document).ready(function ($) {
     console.log('クリックされました');
     $('.js-navigation').toggleClass('is-open'); // ボタン自身に activeクラスを付与し
   });
-
-  $('#g-nav a').click(function () {
-    // ナビゲーションのリンクがクリックされたら
-    $('.js-navigation').removeClass('is-open'); // ボタンの activeクラスを除去し
-  });
 });
