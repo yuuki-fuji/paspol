@@ -100,3 +100,52 @@ function theme_setup() {
 
 // テーマのセットアップが完了した後に 'theme_setup' 関数を実行
 add_action('after_setup_theme', 'theme_setup');
+
+/**
+ * カスタムタクソノミー 'product-category' を追加する関数。
+ */
+function create_product_taxonomies() {
+  // カスタムタクソノミー（カテゴリー）'product-category' を登録
+  register_taxonomy(
+    'product-category', // タクソノミーのスラッグ
+    'product', // 関連付けるカスタム投稿タイプ
+    array(
+      'labels' => array(
+        'name' => __('Product Categories'), // 複数形のラベル
+        'singular_name' => __('Product Category') // 単数形のラベル
+      ),
+      'hierarchical' => true, // 階層型（カテゴリーのように親子関係が持てる）
+      'show_ui' => true, // 管理画面に表示する
+      'show_admin_column' => true, // 管理画面の投稿一覧に表示
+      'query_var' => true,
+      'rewrite' => array('slug' => 'product-category') // スラッグを指定
+    )
+  );
+}
+add_action('init', 'create_product_taxonomies');
+
+/**
+ * カスタム投稿 'products' でカテゴリーが未設定の場合に、デフォルトで '未分類' を設定する関数
+ */
+function set_default_product_category( $post_id ) {
+    // 投稿タイプが 'products' ではない場合は何もしない
+    if ( 'product' !== get_post_type( $post_id ) ) {
+        return;
+    }
+
+    // 自動保存などでフックが呼ばれる場合があるため、通常の保存処理以外は無視
+    if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    // タクソノミー 'product-category' に何も設定されていない場合
+    $terms = wp_get_post_terms( $post_id, 'product-category' );
+    if ( empty( $terms ) ) {
+        // '未分類' の term_id を設定
+        $uncategorized_term_id = 5;
+
+        // デフォルトで '未分類' タームを設定
+        wp_set_post_terms( $post_id, array( $uncategorized_term_id ), 'product-category' );
+    }
+}
+add_action( 'save_post', 'set_default_product_category' );
