@@ -85,6 +85,7 @@ function theme_setup() {
           'singular_name' => __('Product') // 投稿タイプの単数形の名前
       ),
       'public' => true, // 投稿タイプを公開状態にする
+      'show_in_rest' => true, // REST APIを有効にする
       'has_archive' => true, // 投稿タイプのアーカイブページを有効にする
       'rewrite' => array('slug' => 'products'), // カスタムURLスラッグを設定
       // この投稿タイプがサポートする機能を設定
