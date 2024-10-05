@@ -1,3 +1,7 @@
+<?php
+  get_template_part('template-parts/header'); // header.php をインクルード
+?>
+
 <div class="product-archive">
     <h1>Products</h1>
 
@@ -55,3 +59,7 @@
         <p>No products found.</p>
     <?php endif; ?>
 </div>
+
+<?php
+  get_template_part('template-parts/footer'); // footer.php をインクルード
+?>
