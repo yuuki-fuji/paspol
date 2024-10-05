@@ -1,4 +1,6 @@
-
+<?php
+  get_template_part('template-parts/header'); // header.php をインクルード
+?>
 
 <div class="single-product">
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?> <!-- 投稿があるとき -->
@@ -33,3 +35,7 @@
       <p>No product found.</p>
   <?php endif; ?>
 </div>
+
+<?php
+  get_template_part('template-parts/footer'); // footer.php をインクルード
+?>
