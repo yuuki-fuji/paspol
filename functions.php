@@ -97,6 +97,21 @@ function theme_setup() {
       )
     )
   );
+
+  // カスタム投稿タイプ 'news' を登録
+  register_post_type('news',
+    array(
+      'labels' => array(
+        'name' => __('News'),
+        'singular_name' => __('News Item')
+      ),
+      'public' => true,
+      'show_in_rest' => true,
+      'has_archive' => true,
+      'rewrite' => array('slug' => 'news'),
+      'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
+    )
+  );
 }
 
 // テーマのセットアップが完了した後に 'theme_setup' 関数を実行
